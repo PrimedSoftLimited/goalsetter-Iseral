@@ -4,7 +4,7 @@
         <meta charset="UTF-8" >
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"  > 
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" href="images/Group 8.png" type="image/x-icon" />
+        <link rel="icon" href="images/Untitled.png" type="image/x-icon" />
         <title>Goal SETTER</title>
         <link rel="stylesheet" href="main/css/bootstrap.min.css">
         <link rel="stylesheet" href="main/animate.css">
@@ -20,17 +20,12 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <p class="navbar-brand">
-                  <img src="images/Group 3.1.png" alt="">
+                    <img class="group" src="images/GROUP 3.2.png" alt="">
                 </p>
             </div>
                 <ul class="nav navbar-nav ml-auto">
                     <li class="active">
-                        <a class="nav-link" style="color:#3768a0" href="profile.html"> User Management</a>
-                    </li>
-                    <li>
-                        <form action="" id="logoutForm">
-                            <button type="submit" id="button">logout</button>
-                          </form>
+                        <a class="nav-link" style="color:#ffffff" href="profile.html"> User Management</a>
                     </li>
                 </ul>
         </div>
@@ -39,19 +34,19 @@
 
 
  <!--body-->
-<div class="container-fluid" style="background-color:#e6e6e6;">
+<div class="container-fluid">
     <div class="row dash">
         <div class="col-2 border" >
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link profill" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                        <a class="nav-link profill" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                        <a class="nav-link profill" href="profile.html" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
                         <a class="nav-link profill" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
                         <a class="nav-link profill" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                        
+                        <a class="nav-link profill" data-toggle="pill" href=""  role="tab" aria-controls="v-pills-settings" aria-selected="false" id="logoutForm">Logout</a> 
                 </div>
             </div>
     
-        <div class="col-7 border">
+        <div class="col-7 border" style="background-color:#F8F8FF;">
               <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"> 
                             <div class="fieldset">
@@ -81,7 +76,7 @@
                 </div> 
             </div>
           </div>
-        <div class="col-3 border text-center" style="background-color:#e6e6e6;">
+        <div class="col-3 border text-center">
                 
                 <i class="fa fa-user-circle" style="color:#3768a0; font-size:100px; margin-top:30%;"></i>
                 <marquee behavior="" direction="">You are welcome</marquee>  
@@ -103,68 +98,50 @@
         </div>
               
         <!-- Modal body -->
-        <div class="modal-body">
-            <form action="" method="get">
-                <label style="color:#2d80ce">Goal Name :</label> 
-                <input style="background-color:#ffffff; border:1px solid; width: 40%; color:#2d80ce" type="text"> 
-                <label style="color:#2d80ce;">due date :</label>
-                <input style="background-color:#ffffff; border:1px solid; color:#2d80ce" type="date" value="">
-                <div style="width:40%">
-                <select class="form-control">
-                      <option selected>Choose</option>
-                      <option>One the day</option>
-                      <option>1 day</option>
-                      <option>2 days</option>
-                      <option>3 days</option>
-                      <option>1 week before</option>
-                      <option>Daily</option>
-                      <option>weekly</option>
-                      <option>monthly</option>
-                      <option>yearly</option>
-                </select>
-                    
-                <select class="form-control">
-                      <option selected>Choose</option>
-                      <option>One the day</option>
-                      <option>1 day</option>
-                      <option>2 days</option>
-                      <option>3 days</option>
-                      <option>1 week before</option>
-                      <option>Daily</option>
-                      <option>weekly</option>
-                      <option>monthly</option>
-                      <option>yearly</option>
-                  </select>
-                   
-                  <select class="form-control">
-                        <option selected>Choose</option>
-                        <option>One the day</option>
-                        <option>1 day</option>
-                        <option>2 days</option>
-                        <option>3 days</option>
-                        <option>1 week before</option>
-                        <option>Daily</option>
-                        <option>weekly</option>
-                        <option>monthly</option>
-                        <option>yearly</option>
+    
+       
+            <form action="" method="get" id="getGoal">
+                <div class="modal-body">
+                    <label style="color:#3768a0;">Goal name :</label><br>
+                    <input style="background-color:#ffffff; border:1px solid; width: 100%; color:#2d80ce" id="Goal" type="text"> 
+
+              <div class="row">
+                <div class="col-3">
+                    <label style="color:#3768a0;">Start date :</label>
+                    <input style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="Start" type="date" value="">
+                </div>
+              <div class="col-3">
+              </div>
+                <div class="col-3">
+                    <label style="color:#3768a0;">End date :</label>
+                    <input style="background-color:#ffffff; border:1px solid; color:#2d80ce" id="End" type="date" value=""> 
+                </div>
+              </div>
+              <div class="row"> 
+                  <div class="col-12">
+                      <label style="color:#3768a0;">Magnitude :</label>
+                      <select class="form-control" id="magnitude">
+                          <option>Easy</option>
+                          <option>challenging</option>
+                          <option>Difficult</option>
                     </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <label style="color:#2d80ce">Why do you want to active this goal ?</label>
+                        <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="4" cols="48" id="Why"></textarea>
                     </div>
-                    <label style="color:#2d80ce">Why do you want to active this goal ?</label>
-                    <textarea style="border: 1px solid #2d80ce; color:#2d80ce" rows="4" cols="47"></textarea>
-                    <label style="color:#2d80ce">S.M.A.R.T. goal</label> <br>
-                    <input type="checkbox"> <label style="color:#2d80ce;font-size: 12px;">
-                        Yes, my goal is Specific, Measurable, Achievable, Relavant and Time Specific</label>
+                  </div>
+                </div>
+                  <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal">
+                      <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal4" data-save="modal">
+                          Save
+                        </button>
+                  </ANY>  
             </form>
-        </div>
-              
-              <!-- Modal footer -->
-        <div class="modal-footer">
-            <ANY data-toggle="modal" data-target="TARGET-2" data-dismiss="modal">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4" data-save="modal">
-                    Save
-                  </button>
-            </ANY>   
-        </div>
+      
               
       </div>
     </div>

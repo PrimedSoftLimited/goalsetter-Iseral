@@ -202,7 +202,7 @@ logoutForm = _("#logoutForm");
 
 if (logoutForm) {
 
-  logoutForm.addEventListener('submit', function (e) {
+  logoutForm.addEventListener('click', function (e) {
     e.preventDefault();
 
       localStorage.removeItem('goaltoken');
@@ -221,3 +221,114 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
+
+
+getGoal = _("#getGoal");
+
+if (getGoal) {
+
+  getGoal.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const goal_title = _("#goal_title").value;
+    const start = _("#start").value;
+    const end = _("#end").value;
+    const magnitude = _("#magnitude").value;
+    const why = _("#why").value;
+
+  
+    const userData = {
+      title: goal_title,
+      description:why,
+      begin_date: start,
+      due_date:end,
+      level: magnitude
+    }
+
+    const registerUrl = "https://goalsetterapi.herokuapp.com/api/goals/create";
+
+    axios.post(registerUrl, userData).then(function (response) {
+
+      console.log(response.data);
+
+
+    }).catch(function (err) {
+      console.log(err.response);
+ 
+    })
+
+    
+
+
+  })
+
+}
+
+
+// View goal
+profile = _("#profile");
+
+if (profile) {
+
+  const profileUrl = "https://goalsetterapi.herokuapp.com/api/profile";
+
+  const token = localStorage.getItem("goaltoken");
+
+
+  console.log(token)
+
+  const options = {
+    headers: {
+      Authorization: token,
+    }
+  }
+
+  console.log(_('#basicInfo').innerHTML)
+
+  axios.get(profileUrl, options).then(function (response) {
+    console.log(response.data.data.user);
+
+
+    const user = response.data.data.user;
+
+    localStorage.setItem('user', user)
+
+    console.log(user.name)
+
+    if(user) {
+      _('#user_img').innerHTML = ``;
+    }
+
+    _('#bigName').innerHTML = `Name: ${user.name}`;
+         _("#show_image").innerHTML = `
+         <img src="http://res.cloudinary.com/getfiledata/image/upload/v1552380958/${user.user_image}">
+         `;
+        _("#user_details").innerHTML = `
+
+        <tr>
+          <td>NAME</td>
+            <td>${user.name}</td>
+          </tr>
+
+          <tr>
+            <td>EMAIL</td>
+            <td>${user.email}</td>
+          </tr>
+          <tr>
+            <td>NUMBER</td>
+            <td>${user.phone_number}</td>
+          </tr>
+          <tr>
+            <td>ACCOUNT TYPE</td>
+            <td>${user.account_type} </td>
+          </tr>
+
+          <tr>
+            <td>DATE CREATED</td>
+            <td>${new Date(user.created_at).toLocaleDateString()}</td>
+          </tr> 
+  
+        `;
+  }).catch(function (err) {
+   
+  })
+}
